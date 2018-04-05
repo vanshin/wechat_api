@@ -1,4 +1,4 @@
-#coding=utf-8
+#coding=utf8
 
 '''user'''
 
@@ -29,7 +29,10 @@ def post_event():
     timestamp = d.get('timestamp')
     nonce = d.get('nonce')
     echostr = d.get('echostr')
-    token = 'weixin_token_weixin_e311ec83943f'
+
+    log.debug('signature={}, timestamp={}, nonce={}, echostr={}'.format(signature, timestamp, nonce, echostr))
+
+    token = 'weixin_e311ec83943f'
     si_list = [token, timestamp, nonce]
     si_list.sort()
     sha1 = hashlib.sha1()
