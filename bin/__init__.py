@@ -13,4 +13,7 @@ def create_app(config_name):
     from .menu import menu as menu_blueprint
     app.register_blueprint(menu_blueprint)
 
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
+
     return app
