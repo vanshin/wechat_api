@@ -30,5 +30,5 @@ with app.app_context():
     current_app.dbsess = dbsess
 
 if __name__ == '__main__':
-    app.run(port=8898)
+    app.run(port=80)
 
