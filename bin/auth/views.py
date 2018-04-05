@@ -24,6 +24,7 @@ def post_event():
 
     d = request.values
 
+
     signature = d.get('signature')
     timestamp = d.get('timestamp')
     nonce = d.get('nonce')
