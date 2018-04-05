@@ -19,7 +19,7 @@ from altools.base.error import UserExcp
 
 from . import auth
 
-@auth.route('/wechat/event', methods=['POST', 'GET'])
+@auth.route('/wechat/auth/token', methods=['POST', 'GET'])
 def post_event():
 
     d = request.values
@@ -33,10 +33,12 @@ def post_event():
     log.debug('signature={}, timestamp={}, nonce={}, echostr={}'.format(signature, timestamp, nonce, echostr))
 
     token = 'weixin_e311ec83943f'
+    sha1 = hashlib.sha1()
     si_list = [token, timestamp, nonce]
     si_list.sort()
-    sha1 = hashlib.sha1()
-    map(sha1.update, si_list)
+    for i in si_list:
+        i = i.encode('utf8')
+        sha1.update(i)
     hashcode = sha1.hexdigest()
     log.debug('signature={}, hashcode={}'.format(signature, hashcode))
     if hashcode == signature:
