@@ -2,5 +2,5 @@
 
 from flask import Blueprint
 
-auth = Blueprint('auth', __name__)
+event = Blueprint('event', __name__)
 from . import views, error
