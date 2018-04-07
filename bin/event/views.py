@@ -30,7 +30,7 @@ def post_event():
         '''认证'''
         args = {}
         auth_args_key = ['signature', 'timestamp', 'nonce', 'echostr']
-        for arg in auth_args:
+        for arg in auth_args_key:
             tmp_value = d.get(arg)
             if not tmp_value:
                 log.info('args {} is {}'.format(arg, tmp_value))
