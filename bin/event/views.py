@@ -18,7 +18,7 @@ from altools.base.output import output
 from altools.base.error import UserExcp
 from altools.base.deco import show_args
 
-from base import WeChatDef
+from .base import WeChatDef
 from . import event
 
 @event.route('/wechat/event', methods=['POST', 'GET'])
